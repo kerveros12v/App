@@ -11,9 +11,6 @@ import ec.edu.intsuperior.vista.JPProductos;
 import ec.edu.intsuperior.vista.JPUsuario;
 import ec.edu.intsuperior.vista.Login;
 import ec.edu.intsuperior.vista.WCentral;
-import java.beans.PropertyVetoException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
@@ -33,7 +30,7 @@ public class Controlador {
     }
     public void getProducto(WCentral central){
         JPProductos wc=new JPProductos(this);
-        abrirInternalJFrame("Productos", central, wc,false,true,false,415, 300);
+        abrirInternalJFrame("Productos", central, wc,false,true,false,500, 400);
     }
     public void getSistema(){
        WCentral wc=new WCentral(this);
