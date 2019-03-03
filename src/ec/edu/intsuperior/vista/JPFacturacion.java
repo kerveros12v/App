@@ -37,50 +37,52 @@ Controlador controlador;
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel5 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jbtnNuevoCliente = new javax.swing.JButton();
+        jtxtDireccion = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
-        jButton8 = new javax.swing.JButton();
+        jtxtNumeroTelefono = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jtxtApellidos = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jtxtNombres = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jtxtNumeroIdentificacion = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jtxtFecha = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jtxtTipo = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jTxtNumero = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jtxtDescuento = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jtxtiva = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jtxtSubtotal = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jtxtTotal = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtbListaProductos = new javax.swing.JTable();
         jToolBar1 = new javax.swing.JToolBar();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        jbtnNuevo = new javax.swing.JButton();
+        jbtnGuardar = new javax.swing.JButton();
+        jbtnEditar = new javax.swing.JButton();
+        jbtnEliminar = new javax.swing.JButton();
+        jbtnBuscar = new javax.swing.JButton();
+        jBtnImprimir = new javax.swing.JButton();
+        jBtnRetenciones = new javax.swing.JButton();
+        jbtnDevoluciones = new javax.swing.JButton();
         jToolBar2 = new javax.swing.JToolBar();
         jLabel13 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jcmbFormaPago = new javax.swing.JComboBox<>();
         jToolBar3 = new javax.swing.JToolBar();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jTextField13 = new javax.swing.JTextField();
+        jxjproNotificacion = new javax.swing.JProgressBar();
+        jtxtUsuario = new javax.swing.JTextField();
 
         java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
         layout.columnWidths = new int[] {0, 0, 0, 0, 0, 0, 0};
@@ -91,139 +93,141 @@ Controlador controlador;
 
         jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel5.setPreferredSize(new java.awt.Dimension(654, 120));
-        jPanel5.setLayout(new java.awt.GridBagLayout());
+        jPanel5.setLayout(new javax.swing.BoxLayout(jPanel5, javax.swing.BoxLayout.LINE_AXIS));
 
-        jLabel5.setText("Tipo");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel5.add(jLabel5, gridBagConstraints);
+        jbtnNuevoCliente.setText("Nuevo Cliente");
 
-        jTextField5.setMinimumSize(new java.awt.Dimension(100, 19));
-        jTextField5.setPreferredSize(new java.awt.Dimension(150, 19));
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel5.add(jTextField5, gridBagConstraints);
-
-        jLabel6.setText("Numero");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
-        gridBagConstraints.gridy = 0;
-        jPanel5.add(jLabel6, gridBagConstraints);
-
-        jTextField6.setMinimumSize(new java.awt.Dimension(150, 19));
-        jTextField6.setPreferredSize(new java.awt.Dimension(200, 19));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 16;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 17;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel5.add(jTextField6, gridBagConstraints);
-
-        jLabel7.setText("Fecha");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 36;
-        gridBagConstraints.gridy = 0;
-        jPanel5.add(jLabel7, gridBagConstraints);
-
-        jTextField7.setPreferredSize(new java.awt.Dimension(150, 19));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 40;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel5.add(jTextField7, gridBagConstraints);
-
-        jLabel8.setText("Numero de Identificacion");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel5.add(jLabel8, gridBagConstraints);
-
-        jTextField8.setMinimumSize(new java.awt.Dimension(100, 19));
-        jTextField8.setPreferredSize(new java.awt.Dimension(150, 19));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 9;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel5.add(jTextField8, gridBagConstraints);
-
-        jLabel9.setText("Nombres");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 20;
-        gridBagConstraints.gridy = 4;
-        jPanel5.add(jLabel9, gridBagConstraints);
-
-        jTextField9.setMinimumSize(new java.awt.Dimension(250, 19));
-        jTextField9.setPreferredSize(new java.awt.Dimension(250, 19));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 24;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 17;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel5.add(jTextField9, gridBagConstraints);
-
-        jLabel10.setText("Apellidos");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        jPanel5.add(jLabel10, gridBagConstraints);
-
-        jTextField10.setPreferredSize(new java.awt.Dimension(250, 19));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 21;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel5.add(jTextField10, gridBagConstraints);
-
-        jLabel11.setText("Numero Telefono");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 32;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel5.add(jLabel11, gridBagConstraints);
-
-        jTextField11.setMinimumSize(new java.awt.Dimension(100, 19));
-        jTextField11.setPreferredSize(new java.awt.Dimension(100, 19));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 36;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel5.add(jTextField11, gridBagConstraints);
+        jtxtDireccion.setPreferredSize(new java.awt.Dimension(350, 19));
 
         jLabel12.setText("Direccion");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 12;
-        jPanel5.add(jLabel12, gridBagConstraints);
 
-        jTextField12.setPreferredSize(new java.awt.Dimension(350, 19));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 29;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel5.add(jTextField12, gridBagConstraints);
+        jtxtNumeroTelefono.setMinimumSize(new java.awt.Dimension(100, 19));
+        jtxtNumeroTelefono.setPreferredSize(new java.awt.Dimension(100, 19));
 
-        jButton8.setText("Nuevo Cliente");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 36;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 5;
-        jPanel5.add(jButton8, gridBagConstraints);
+        jLabel11.setText("Numero Telefono");
+
+        jtxtApellidos.setPreferredSize(new java.awt.Dimension(250, 19));
+
+        jLabel10.setText("Apellidos");
+
+        jtxtNombres.setMinimumSize(new java.awt.Dimension(250, 19));
+        jtxtNombres.setPreferredSize(new java.awt.Dimension(250, 19));
+
+        jLabel9.setText("Nombres");
+
+        jtxtNumeroIdentificacion.setMinimumSize(new java.awt.Dimension(100, 19));
+        jtxtNumeroIdentificacion.setPreferredSize(new java.awt.Dimension(150, 19));
+
+        jLabel8.setText("Numero de Identificacion");
+
+        jtxtFecha.setPreferredSize(new java.awt.Dimension(150, 19));
+
+        jLabel7.setText("Fecha");
+
+        jLabel6.setText("Numero");
+
+        jtxtTipo.setMinimumSize(new java.awt.Dimension(100, 19));
+        jtxtTipo.setPreferredSize(new java.awt.Dimension(150, 19));
+        jtxtTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtTipoActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Tipo");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jbtnNuevoCliente)
+                        .addGap(5, 5, 5)
+                        .addComponent(jtxtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel12)
+                        .addGap(5, 5, 5)
+                        .addComponent(jtxtNumeroTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel11)
+                        .addGap(5, 5, 5)
+                        .addComponent(jtxtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel10))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(jtxtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(5, 5, 5)
+                                .addComponent(jtxtNumeroIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(5, 5, 5)
+                                .addComponent(jLabel8)
+                                .addGap(5, 5, 5)
+                                .addComponent(jtxtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(5, 5, 5)
+                                .addComponent(jLabel7)
+                                .addGap(5, 5, 5)
+                                .addComponent(jLabel6)
+                                .addGap(5, 5, 5)
+                                .addComponent(jtxtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jbtnNuevoCliente)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jtxtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel12))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jtxtNumeroTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel11))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jtxtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel10)))
+                .addGap(5, 5, 5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtxtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtNumeroIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+
+        jPanel5.add(jPanel1);
+
+        jTxtNumero.setMinimumSize(new java.awt.Dimension(150, 19));
+        jTxtNumero.setPreferredSize(new java.awt.Dimension(200, 19));
+        jPanel2.add(jTxtNumero);
+
+        jPanel5.add(jPanel2);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -240,24 +244,24 @@ Controlador controlador;
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Descuento   ");
         jPanel6.add(jLabel1);
-        jPanel6.add(jTextField1);
+        jPanel6.add(jtxtDescuento);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Iva   ");
         jPanel6.add(jLabel2);
-        jPanel6.add(jTextField2);
+        jPanel6.add(jtxtiva);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Subtotal  ");
         jPanel6.add(jLabel3);
-        jPanel6.add(jTextField3);
+        jPanel6.add(jtxtSubtotal);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Total  ");
         jPanel6.add(jLabel4);
 
-        jTextField4.setMinimumSize(new java.awt.Dimension(4, 30));
-        jPanel6.add(jTextField4);
+        jtxtTotal.setMinimumSize(new java.awt.Dimension(4, 30));
+        jPanel6.add(jtxtTotal);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
@@ -270,7 +274,7 @@ Controlador controlador;
         jPanel8.setPreferredSize(new java.awt.Dimension(673, 300));
         jPanel8.setLayout(new javax.swing.BoxLayout(jPanel8, javax.swing.BoxLayout.LINE_AXIS));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtbListaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null}
             },
@@ -278,10 +282,10 @@ Controlador controlador;
                 "Codigo", "Descripcion", "Cantidad", "Precio Unitario", "Iva", "Descuento", "SubTotal"
             }
         ));
-        jTable1.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
-        jTable1.setMinimumSize(new java.awt.Dimension(600, 300));
-        jTable1.setPreferredSize(new java.awt.Dimension(600, 300));
-        jScrollPane1.setViewportView(jTable1);
+        jtbListaProductos.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
+        jtbListaProductos.setMinimumSize(new java.awt.Dimension(600, 300));
+        jtbListaProductos.setPreferredSize(new java.awt.Dimension(600, 300));
+        jScrollPane1.setViewportView(jtbListaProductos);
 
         jPanel8.add(jScrollPane1);
 
@@ -294,61 +298,66 @@ Controlador controlador;
 
         jToolBar1.setFloatable(false);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/new_add_insert_file_13948.png"))); // NOI18N
-        jButton1.setToolTipText("NUEVO");
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton1);
+        jbtnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/new_add_insert_file_13948.png"))); // NOI18N
+        jbtnNuevo.setToolTipText("NUEVO");
+        jbtnNuevo.setFocusable(false);
+        jbtnNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtnNuevo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jbtnNuevo);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/save_icon-icons.com_53618.png"))); // NOI18N
-        jButton2.setToolTipText("GUARDAR");
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton2);
+        jbtnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/save_icon-icons.com_53618.png"))); // NOI18N
+        jbtnGuardar.setToolTipText("GUARDAR");
+        jbtnGuardar.setFocusable(false);
+        jbtnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtnGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jbtnGuardar);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/organizer_calendar_clock_pencil_10047.png"))); // NOI18N
-        jButton3.setToolTipText("EDITAR");
-        jButton3.setFocusable(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton3);
+        jbtnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/organizer_calendar_clock_pencil_10047.png"))); // NOI18N
+        jbtnEditar.setToolTipText("EDITAR");
+        jbtnEditar.setFocusable(false);
+        jbtnEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtnEditar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jbtnEditar);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/delete_delete_exit_1577.png"))); // NOI18N
-        jButton4.setToolTipText("ELIMINAR");
-        jButton4.setFocusable(false);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton4);
+        jbtnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/delete_delete_exit_1577.png"))); // NOI18N
+        jbtnEliminar.setToolTipText("ELIMINAR");
+        jbtnEliminar.setFocusable(false);
+        jbtnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jbtnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnEliminarActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jbtnEliminar);
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/find_search_card_user_16713.png"))); // NOI18N
-        jButton7.setToolTipText("BUSCAR");
-        jButton7.setFocusable(false);
-        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton7);
+        jbtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/find_search_card_user_16713.png"))); // NOI18N
+        jbtnBuscar.setToolTipText("BUSCAR");
+        jbtnBuscar.setFocusable(false);
+        jbtnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtnBuscar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jbtnBuscar);
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/print-icon.png"))); // NOI18N
-        jButton5.setToolTipText("IMPRIMIR");
-        jButton5.setFocusable(false);
-        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton5);
+        jBtnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/print-icon.png"))); // NOI18N
+        jBtnImprimir.setToolTipText("IMPRIMIR");
+        jBtnImprimir.setFocusable(false);
+        jBtnImprimir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImprimir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jBtnImprimir);
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/book_handbook_manual_bible_icon-icons.com_55989.png"))); // NOI18N
-        jButton6.setToolTipText("RETENCION");
-        jButton6.setFocusable(false);
-        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton6);
+        jBtnRetenciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/book_handbook_manual_bible_icon-icons.com_55989.png"))); // NOI18N
+        jBtnRetenciones.setToolTipText("RETENCION");
+        jBtnRetenciones.setFocusable(false);
+        jBtnRetenciones.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnRetenciones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jBtnRetenciones);
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/delete-file_40456.png"))); // NOI18N
-        jButton9.setToolTipText("DEVOLUCION");
-        jButton9.setFocusable(false);
-        jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton9);
+        jbtnDevoluciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/delete-file_40456.png"))); // NOI18N
+        jbtnDevoluciones.setToolTipText("DEVOLUCION");
+        jbtnDevoluciones.setFocusable(false);
+        jbtnDevoluciones.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtnDevoluciones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jbtnDevoluciones);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -361,9 +370,9 @@ Controlador controlador;
         jLabel13.setText("Forma de Pago");
         jToolBar2.add(jLabel13);
 
-        jComboBox1.setMinimumSize(new java.awt.Dimension(200, 24));
-        jComboBox1.setPreferredSize(new java.awt.Dimension(200, 24));
-        jToolBar2.add(jComboBox1);
+        jcmbFormaPago.setMinimumSize(new java.awt.Dimension(200, 24));
+        jcmbFormaPago.setPreferredSize(new java.awt.Dimension(200, 24));
+        jToolBar2.add(jcmbFormaPago);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -374,12 +383,12 @@ Controlador controlador;
 
         jToolBar3.setFloatable(false);
         jToolBar3.setRollover(true);
-        jToolBar3.add(jProgressBar1);
+        jToolBar3.add(jxjproNotificacion);
 
-        jTextField13.setMaximumSize(new java.awt.Dimension(70, 2147483647));
-        jTextField13.setMinimumSize(new java.awt.Dimension(70, 19));
-        jTextField13.setPreferredSize(new java.awt.Dimension(150, 19));
-        jToolBar3.add(jTextField13);
+        jtxtUsuario.setMaximumSize(new java.awt.Dimension(70, 2147483647));
+        jtxtUsuario.setMinimumSize(new java.awt.Dimension(70, 19));
+        jtxtUsuario.setPreferredSize(new java.awt.Dimension(150, 19));
+        jToolBar3.add(jtxtUsuario);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -389,22 +398,18 @@ Controlador controlador;
         add(jToolBar3, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void jtxtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtTipoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_jtxtTipoActionPerformed
+
+    private void jbtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton jBtnImprimir;
+    private javax.swing.JButton jBtnRetenciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -418,27 +423,37 @@ Controlador controlador;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JToolBar jToolBar2;
     private javax.swing.JToolBar jToolBar3;
+    private javax.swing.JTextField jTxtNumero;
+    private javax.swing.JButton jbtnBuscar;
+    private javax.swing.JButton jbtnDevoluciones;
+    private javax.swing.JButton jbtnEditar;
+    private javax.swing.JButton jbtnEliminar;
+    private javax.swing.JButton jbtnGuardar;
+    private javax.swing.JButton jbtnNuevo;
+    private javax.swing.JButton jbtnNuevoCliente;
+    private javax.swing.JComboBox<String> jcmbFormaPago;
+    private javax.swing.JTable jtbListaProductos;
+    private javax.swing.JTextField jtxtApellidos;
+    private javax.swing.JTextField jtxtDescuento;
+    private javax.swing.JTextField jtxtDireccion;
+    private javax.swing.JTextField jtxtFecha;
+    private javax.swing.JTextField jtxtNombres;
+    private javax.swing.JTextField jtxtNumeroIdentificacion;
+    private javax.swing.JTextField jtxtNumeroTelefono;
+    private javax.swing.JTextField jtxtSubtotal;
+    private javax.swing.JTextField jtxtTipo;
+    private javax.swing.JTextField jtxtTotal;
+    private javax.swing.JTextField jtxtUsuario;
+    private javax.swing.JTextField jtxtiva;
+    private javax.swing.JProgressBar jxjproNotificacion;
     // End of variables declaration//GEN-END:variables
 }

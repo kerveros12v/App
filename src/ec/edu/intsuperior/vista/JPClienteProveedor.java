@@ -45,18 +45,20 @@ public void settipotexto(String tipo){
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        jtxtNombre = new javax.swing.JTextField();
+        jtxtApellido = new javax.swing.JTextField();
+        jtxtDireccion = new javax.swing.JTextField();
+        jtxtTelefono = new javax.swing.JTextField();
+        jtxtCedula = new javax.swing.JTextField();
+        jpbEstado = new javax.swing.JProgressBar();
+        jLabel7 = new javax.swing.JLabel();
+        jtxtCorreo = new javax.swing.JTextField();
         jToolBar1 = new javax.swing.JToolBar();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        jbtnNuevo = new javax.swing.JButton();
+        jbtnGuardar = new javax.swing.JButton();
+        jbtnEditar = new javax.swing.JButton();
+        jbtnEliminar = new javax.swing.JButton();
+        jbtnBuscar = new javax.swing.JButton();
 
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.PAGE_AXIS));
 
@@ -78,7 +80,10 @@ public void settipotexto(String tipo){
 
         add(jPanel1);
 
-        jPanel2.setLayout(new java.awt.GridBagLayout());
+        java.awt.GridBagLayout jPanel2Layout = new java.awt.GridBagLayout();
+        jPanel2Layout.columnWidths = new int[] {0, 5, 0, 5, 0};
+        jPanel2Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
+        jPanel2.setLayout(jPanel2Layout);
 
         jLabel2.setText("Nombres       ");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -91,7 +96,7 @@ public void settipotexto(String tipo){
         jLabel3.setText("Apellidos");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel2.add(jLabel3, gridBagConstraints);
@@ -99,7 +104,7 @@ public void settipotexto(String tipo){
         jLabel4.setText("Direccion");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel2.add(jLabel4, gridBagConstraints);
@@ -107,7 +112,7 @@ public void settipotexto(String tipo){
         jLabel5.setText("Telefono");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 12;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel2.add(jLabel5, gridBagConstraints);
@@ -115,88 +120,110 @@ public void settipotexto(String tipo){
         jLabel6.setText("Cedula");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 16;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel2.add(jLabel6, gridBagConstraints);
 
-        jTextField2.setPreferredSize(new java.awt.Dimension(200, 19));
+        jtxtNombre.setPreferredSize(new java.awt.Dimension(200, 19));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
-        jPanel2.add(jTextField2, gridBagConstraints);
+        jPanel2.add(jtxtNombre, gridBagConstraints);
 
-        jTextField3.setPreferredSize(new java.awt.Dimension(200, 19));
+        jtxtApellido.setPreferredSize(new java.awt.Dimension(200, 19));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        jPanel2.add(jTextField3, gridBagConstraints);
-
-        jTextField4.setPreferredSize(new java.awt.Dimension(200, 19));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 4;
-        jPanel2.add(jTextField4, gridBagConstraints);
+        jPanel2.add(jtxtApellido, gridBagConstraints);
 
-        jTextField5.setPreferredSize(new java.awt.Dimension(200, 19));
+        jtxtDireccion.setPreferredSize(new java.awt.Dimension(200, 19));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
-        jPanel2.add(jTextField5, gridBagConstraints);
-
-        jTextField6.setPreferredSize(new java.awt.Dimension(200, 19));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 8;
-        jPanel2.add(jTextField6, gridBagConstraints);
+        jPanel2.add(jtxtDireccion, gridBagConstraints);
 
-        jProgressBar1.setBorder(null);
-        jProgressBar1.setBorderPainted(false);
+        jtxtTelefono.setPreferredSize(new java.awt.Dimension(200, 19));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 12;
+        jPanel2.add(jtxtTelefono, gridBagConstraints);
+
+        jtxtCedula.setPreferredSize(new java.awt.Dimension(200, 19));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 16;
+        jPanel2.add(jtxtCedula, gridBagConstraints);
+
+        jpbEstado.setBorderPainted(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridy = 22;
+        gridBagConstraints.gridwidth = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel2.add(jProgressBar1, gridBagConstraints);
+        jPanel2.add(jpbEstado, gridBagConstraints);
+
+        jLabel7.setText("Correo");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jPanel2.add(jLabel7, gridBagConstraints);
+
+        jtxtCorreo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtCorreoActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel2.add(jtxtCorreo, gridBagConstraints);
 
         add(jPanel2);
 
         jToolBar1.setFloatable(false);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/new_add_insert_file_13948.png"))); // NOI18N
-        jButton1.setToolTipText("NUEVO");
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton1);
+        jbtnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/new_add_insert_file_13948.png"))); // NOI18N
+        jbtnNuevo.setToolTipText("NUEVO");
+        jbtnNuevo.setFocusable(false);
+        jbtnNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtnNuevo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jbtnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnNuevoActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jbtnNuevo);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/save_icon-icons.com_53618.png"))); // NOI18N
-        jButton2.setToolTipText("GUARDAR");
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton2);
+        jbtnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/save_icon-icons.com_53618.png"))); // NOI18N
+        jbtnGuardar.setToolTipText("GUARDAR");
+        jbtnGuardar.setFocusable(false);
+        jbtnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtnGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jbtnGuardar);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/organizer_calendar_clock_pencil_10047.png"))); // NOI18N
-        jButton3.setToolTipText("EDITAR");
-        jButton3.setFocusable(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton3);
+        jbtnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/organizer_calendar_clock_pencil_10047.png"))); // NOI18N
+        jbtnEditar.setToolTipText("EDITAR");
+        jbtnEditar.setFocusable(false);
+        jbtnEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtnEditar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jbtnEditar);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/delete-file_40456.png"))); // NOI18N
-        jButton4.setToolTipText("ELIMINAR");
-        jButton4.setFocusable(false);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton4);
+        jbtnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/delete-file_40456.png"))); // NOI18N
+        jbtnEliminar.setToolTipText("ELIMINAR");
+        jbtnEliminar.setFocusable(false);
+        jbtnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jbtnEliminar);
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/find_search_card_user_16713.png"))); // NOI18N
-        jButton7.setToolTipText("BUSCAR");
-        jButton7.setFocusable(false);
-        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton7);
+        jbtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/find_search_card_user_16713.png"))); // NOI18N
+        jbtnBuscar.setToolTipText("BUSCAR");
+        jbtnBuscar.setFocusable(false);
+        jbtnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtnBuscar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jbtnBuscar);
 
         add(jToolBar1);
     }// </editor-fold>//GEN-END:initComponents
@@ -205,28 +232,38 @@ public void settipotexto(String tipo){
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxttipoActionPerformed
 
+    private void jbtnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNuevoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnNuevoActionPerformed
+
+    private void jtxtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtCorreoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtCorreoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JButton jbtnBuscar;
+    private javax.swing.JButton jbtnEditar;
+    private javax.swing.JButton jbtnEliminar;
+    private javax.swing.JButton jbtnGuardar;
+    private javax.swing.JButton jbtnNuevo;
+    private javax.swing.JProgressBar jpbEstado;
+    private javax.swing.JTextField jtxtApellido;
+    private javax.swing.JTextField jtxtCedula;
+    private javax.swing.JTextField jtxtCorreo;
+    private javax.swing.JTextField jtxtDireccion;
+    private javax.swing.JTextField jtxtNombre;
+    private javax.swing.JTextField jtxtTelefono;
     private javax.swing.JTextField jtxttipo;
     // End of variables declaration//GEN-END:variables
 }
