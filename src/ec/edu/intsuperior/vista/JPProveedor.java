@@ -5,23 +5,26 @@
  */
 package ec.edu.intsuperior.vista;
 
-import ec.edu.intsuperior.controlador.Controlador;
+import ec.edu.intsuperior.controlador.ControladorProveedor;
 
 /**
  *
  * @author userpc
  */
-public class JPClienteProveedor extends javax.swing.JPanel {
+public class JPProveedor extends javax.swing.JPanel {
 
-    private final Controlador controlador;
+    private static final long serialVersionUID = 1L;
+
+    private final ControladorProveedor controlador;
 
     /**
      * Creates new form JPClienteProveedor
      * @param controlador
      */
-    public JPClienteProveedor(Controlador controlador) {
+    public JPProveedor(ControladorProveedor controlador) {
         initComponents();
         this.controlador=controlador;
+        jtxttipo.setText("Proveedores");
     }
 public void settipotexto(String tipo){
     jtxttipo.setText(tipo);
@@ -53,6 +56,9 @@ public void settipotexto(String tipo){
         jpbEstado = new javax.swing.JProgressBar();
         jLabel7 = new javax.swing.JLabel();
         jtxtCorreo = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel8 = new javax.swing.JLabel();
         jToolBar1 = new javax.swing.JToolBar();
         jbtnNuevo = new javax.swing.JButton();
         jbtnGuardar = new javax.swing.JButton();
@@ -81,7 +87,7 @@ public void settipotexto(String tipo){
         add(jPanel1);
 
         java.awt.GridBagLayout jPanel2Layout = new java.awt.GridBagLayout();
-        jPanel2Layout.columnWidths = new int[] {0, 5, 0, 5, 0};
+        jPanel2Layout.columnWidths = new int[] {0, 5, 0, 5, 0, 5, 0};
         jPanel2Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPanel2.setLayout(jPanel2Layout);
 
@@ -125,41 +131,48 @@ public void settipotexto(String tipo){
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel2.add(jLabel6, gridBagConstraints);
 
-        jtxtNombre.setPreferredSize(new java.awt.Dimension(200, 19));
+        jtxtNombre.setPreferredSize(new java.awt.Dimension(200, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
         jPanel2.add(jtxtNombre, gridBagConstraints);
 
-        jtxtApellido.setPreferredSize(new java.awt.Dimension(200, 19));
+        jtxtApellido.setPreferredSize(new java.awt.Dimension(200, 28));
+        jtxtApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtApellidoActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 4;
         jPanel2.add(jtxtApellido, gridBagConstraints);
 
-        jtxtDireccion.setPreferredSize(new java.awt.Dimension(200, 19));
+        jtxtDireccion.setPreferredSize(new java.awt.Dimension(200, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 8;
         jPanel2.add(jtxtDireccion, gridBagConstraints);
 
-        jtxtTelefono.setPreferredSize(new java.awt.Dimension(200, 19));
+        jtxtTelefono.setPreferredSize(new java.awt.Dimension(200, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 12;
         jPanel2.add(jtxtTelefono, gridBagConstraints);
 
-        jtxtCedula.setPreferredSize(new java.awt.Dimension(200, 19));
+        jtxtCedula.setPreferredSize(new java.awt.Dimension(200, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 16;
         jPanel2.add(jtxtCedula, gridBagConstraints);
 
         jpbEstado.setBorderPainted(false);
+        jpbEstado.setString("");
+        jpbEstado.setStringPainted(true);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 22;
-        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel2.add(jpbEstado, gridBagConstraints);
 
@@ -180,6 +193,24 @@ public void settipotexto(String tipo){
         gridBagConstraints.gridy = 20;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel2.add(jtxtCorreo, gridBagConstraints);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setEnabled(false);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridheight = 19;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel2.add(jScrollPane1, gridBagConstraints);
+
+        jLabel8.setText("Notas");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 0;
+        jPanel2.add(jLabel8, gridBagConstraints);
 
         add(jPanel2);
 
@@ -202,6 +233,11 @@ public void settipotexto(String tipo){
         jbtnGuardar.setFocusable(false);
         jbtnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbtnGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jbtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnGuardarActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jbtnGuardar);
 
         jbtnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/organizer_calendar_clock_pencil_10047.png"))); // NOI18N
@@ -209,6 +245,11 @@ public void settipotexto(String tipo){
         jbtnEditar.setFocusable(false);
         jbtnEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbtnEditar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jbtnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnEditarActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jbtnEditar);
 
         jbtnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/delete-file_40456.png"))); // NOI18N
@@ -216,6 +257,11 @@ public void settipotexto(String tipo){
         jbtnEliminar.setFocusable(false);
         jbtnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbtnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jbtnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnEliminarActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jbtnEliminar);
 
         jbtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/find_search_card_user_16713.png"))); // NOI18N
@@ -223,6 +269,11 @@ public void settipotexto(String tipo){
         jbtnBuscar.setFocusable(false);
         jbtnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbtnBuscar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jbtnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnBuscarActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jbtnBuscar);
 
         add(jToolBar1);
@@ -234,11 +285,36 @@ public void settipotexto(String tipo){
 
     private void jbtnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNuevoActionPerformed
         // TODO add your handling code here:
+        controlador.jbtnNuevo(evt, jtxtNombre, jtxtApellido, jtxtDireccion, jtxtTelefono, jtxtCedula, jtxtCorreo, jTextArea1,jpbEstado);
     }//GEN-LAST:event_jbtnNuevoActionPerformed
 
     private void jtxtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtCorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtCorreoActionPerformed
+
+    private void jtxtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtApellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtApellidoActionPerformed
+
+    private void jbtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarActionPerformed
+        // TODO add your handling code here:
+         controlador.jbtnGuardar(evt, jtxtNombre, jtxtApellido, jtxtDireccion, jtxtTelefono, jtxtCedula, jtxtCorreo, jTextArea1,jpbEstado);
+    }//GEN-LAST:event_jbtnGuardarActionPerformed
+
+    private void jbtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEliminarActionPerformed
+        // TODO add your handling code here:
+    controlador.jbtnEliminar(evt, jtxtNombre, jtxtApellido, jtxtDireccion, jtxtTelefono, jtxtCedula, jtxtCorreo, jTextArea1, jpbEstado);
+    }//GEN-LAST:event_jbtnEliminarActionPerformed
+
+    private void jbtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnBuscarActionPerformed
+        // TODO add your handling code here:
+        controlador.jbtnBuscar(evt, jtxtNombre, jtxtApellido, jtxtDireccion, jtxtTelefono, jtxtCedula, jtxtCorreo, jTextArea1, jpbEstado);
+    }//GEN-LAST:event_jbtnBuscarActionPerformed
+
+    private void jbtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEditarActionPerformed
+        // TODO add your handling code here:
+        controlador.jbtnActualizar(evt, jtxtNombre, jtxtApellido, jtxtDireccion, jtxtTelefono, jtxtCedula, jtxtCorreo, jTextArea1, jpbEstado);
+    }//GEN-LAST:event_jbtnEditarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -249,21 +325,24 @@ public void settipotexto(String tipo){
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton jbtnBuscar;
     private javax.swing.JButton jbtnEditar;
     private javax.swing.JButton jbtnEliminar;
     private javax.swing.JButton jbtnGuardar;
     private javax.swing.JButton jbtnNuevo;
-    private javax.swing.JProgressBar jpbEstado;
+    public javax.swing.JProgressBar jpbEstado;
     private javax.swing.JTextField jtxtApellido;
     private javax.swing.JTextField jtxtCedula;
     private javax.swing.JTextField jtxtCorreo;
     private javax.swing.JTextField jtxtDireccion;
     private javax.swing.JTextField jtxtNombre;
     private javax.swing.JTextField jtxtTelefono;
-    private javax.swing.JTextField jtxttipo;
+    public javax.swing.JTextField jtxttipo;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,9 +10,9 @@ package ec.edu.intsuperior.modelo;
  * @author user
  */
 public interface  DatosParametrosGeneral {
-    public Boolean nuevo(String query);
-    public Boolean editar(String query);
-    public Boolean eliminar(String query);
-    public Object buscar(String query);
+    public String nuevo(String query);
+    public String editar(String query);
+    public String eliminar(String query);
+    public void buscar(String query);
     public String Imprimir();
 }

@@ -9,53 +9,34 @@ package ec.edu.intsuperior.modelo;
  *
  * @author user
  */
-public class Proveedores implements DatosParametrosGeneral{
-    int idproveedores;
+public class Proveedores {
     private String prov_nombres;
     private String prov_apellidos;
     private String prov_direccion;
     private String prov_telefono;
     private String prov_cedula;
     private String prov_correo;
+    private String prov_notas;
 
     public Proveedores() {
     }
 
-    public Proveedores(int idproveedores, String prov_nombres, String prov_apellidos, String prov_direccion, String prov_telefono, String prov_cedula, String prov_correo) {
-        this.idproveedores = idproveedores;
+    public Proveedores( String prov_nombres, String prov_apellidos, String prov_direccion, String prov_telefono, String prov_cedula, String prov_correo,String prov_notas) {
         this.prov_nombres = prov_nombres;
         this.prov_apellidos = prov_apellidos;
         this.prov_direccion = prov_direccion;
         this.prov_telefono = prov_telefono;
         this.prov_cedula = prov_cedula;
         this.prov_correo = prov_correo;
+        this.prov_notas=prov_notas;
     }
 
     @Override
-    public Boolean nuevo(String query) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String toString() {
+        return "\nNombres>"+prov_nombres + "\nApellidos> "+prov_apellidos+ "\nDireccion> "+prov_direccion+ "\nTelefono> "+prov_telefono+ "\nCedula> "+prov_cedula+ "\nCorreo> "+prov_correo+"\nNotas> "+prov_notas;
     }
 
-    @Override
-    public Boolean editar(String query) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Boolean eliminar(String query) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object buscar(String query) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String Imprimir() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+   
     /**
      * @return the prov_nombres
      */
@@ -139,4 +120,21 @@ public class Proveedores implements DatosParametrosGeneral{
     public void setProv_correo(String prov_correo) {
         this.prov_correo = prov_correo;
     }
+
+
+    /**
+     * @return the prov_notas
+     */
+    public String getProv_notas() {
+        return prov_notas;
+    }
+
+    /**
+     * @param prov_notas the prov_notas to set
+     */
+    public void setProv_notas(String prov_notas) {
+        this.prov_notas = prov_notas;
+    }
+
+   
 }

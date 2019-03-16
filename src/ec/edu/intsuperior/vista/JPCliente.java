@@ -5,27 +5,29 @@
  */
 package ec.edu.intsuperior.vista;
 
-
-import ec.edu.intsuperior.controlador.ControladorProducto;
+import ec.edu.intsuperior.controlador.ControladorCliente;
 
 /**
  *
  * @author userpc
  */
-public class JPProductos extends javax.swing.JPanel {
+public class JPCliente extends javax.swing.JPanel {
 
     private static final long serialVersionUID = 1L;
-ControladorProducto controlador;
+
+    private final ControladorCliente controlador;
 
     /**
-     * Creates new form JPProductos
+     * Creates new form JPClienteProveedor
      * @param controlador
      */
-    public JPProductos(ControladorProducto controlador) {
+    public JPCliente(ControladorCliente controlador) {
         initComponents();
         this.controlador=controlador;
     }
-
+public void settipotexto(String tipo){
+    jtxttipo.setText(tipo);
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,26 +40,24 @@ ControladorProducto controlador;
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jtxtCodigo = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jtxtDetalle = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jtxtiva = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jtxtprecioCompras = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jtxtprecioVenta = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jtxtStock = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jtxttipo = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jbtnIva = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jbtnCategoria = new javax.swing.JButton();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jtxtNombre = new javax.swing.JTextField();
+        jtxtApellido = new javax.swing.JTextField();
+        jtxtDireccion = new javax.swing.JTextField();
+        jtxtTelefono = new javax.swing.JTextField();
+        jtxtCedula = new javax.swing.JTextField();
+        jpbEstado = new javax.swing.JProgressBar();
+        jLabel7 = new javax.swing.JLabel();
+        jtxtCorreo = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel8 = new javax.swing.JLabel();
         jToolBar1 = new javax.swing.JToolBar();
         jbtnNuevo = new javax.swing.JButton();
         jbtnGuardar = new javax.swing.JButton();
@@ -67,164 +67,150 @@ ControladorProducto controlador;
 
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.PAGE_AXIS));
 
-        jPanel1.setLayout(new java.awt.GridBagLayout());
+        jPanel1.setMaximumSize(new java.awt.Dimension(32767, 30));
+        jPanel1.setPreferredSize(new java.awt.Dimension(326, 30));
+        jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.LINE_AXIS));
 
-        jLabel1.setText("Codigo");
+        jLabel1.setText("Tipo:     ");
+        jPanel1.add(jLabel1);
+
+        jtxttipo.setEditable(false);
+        jtxttipo.setBorder(null);
+        jtxttipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxttipoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jtxttipo);
+
+        add(jPanel1);
+
+        java.awt.GridBagLayout jPanel2Layout = new java.awt.GridBagLayout();
+        jPanel2Layout.columnWidths = new int[] {0, 5, 0, 5, 0, 5, 0};
+        jPanel2Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
+        jPanel2.setLayout(jPanel2Layout);
+
+        jLabel2.setText("Nombres       ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel1.add(jLabel1, gridBagConstraints);
-
-        jtxtCodigo.setMinimumSize(new java.awt.Dimension(200, 20));
-        jtxtCodigo.setPreferredSize(new java.awt.Dimension(200, 20));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel1.add(jtxtCodigo, gridBagConstraints);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel2.add(jLabel2, gridBagConstraints);
 
-        jLabel2.setText("Detalle");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel1.add(jLabel2, gridBagConstraints);
-
-        jtxtDetalle.setMinimumSize(new java.awt.Dimension(120, 20));
-        jtxtDetalle.setPreferredSize(new java.awt.Dimension(70, 20));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel1.add(jtxtDetalle, gridBagConstraints);
-
-        jLabel3.setText("Iva");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel1.add(jLabel3, gridBagConstraints);
-
-        jtxtiva.setMinimumSize(new java.awt.Dimension(120, 20));
-        jtxtiva.setPreferredSize(new java.awt.Dimension(70, 20));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel1.add(jtxtiva, gridBagConstraints);
-
-        jLabel4.setText("Precio de Compra");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel1.add(jLabel4, gridBagConstraints);
-
-        jtxtprecioCompras.setMinimumSize(new java.awt.Dimension(120, 20));
-        jtxtprecioCompras.setPreferredSize(new java.awt.Dimension(70, 20));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel1.add(jtxtprecioCompras, gridBagConstraints);
-
-        jLabel5.setText("Precio de Venta");
+        jLabel3.setText("Apellidos");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel1.add(jLabel5, gridBagConstraints);
-
-        jtxtprecioVenta.setMinimumSize(new java.awt.Dimension(120, 20));
-        jtxtprecioVenta.setPreferredSize(new java.awt.Dimension(70, 20));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel1.add(jtxtprecioVenta, gridBagConstraints);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel2.add(jLabel3, gridBagConstraints);
 
-        jLabel6.setText("Stock");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel1.add(jLabel6, gridBagConstraints);
-
-        jtxtStock.setMinimumSize(new java.awt.Dimension(120, 20));
-        jtxtStock.setPreferredSize(new java.awt.Dimension(70, 20));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel1.add(jtxtStock, gridBagConstraints);
-
-        jLabel7.setText("Iva");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel1.add(jLabel7, gridBagConstraints);
-
-        jLabel8.setText("Categoria");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel1.add(jLabel8, gridBagConstraints);
-
-        jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.LINE_AXIS));
-
-        jPanel2.add(jComboBox1);
-
-        jbtnIva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/ic_menu_search.png"))); // NOI18N
-        jbtnIva.setBorderPainted(false);
-        jbtnIva.setOpaque(true);
-        jbtnIva.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnIvaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jbtnIva);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel1.add(jPanel2, gridBagConstraints);
-
-        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
-
-        jComboBox2.setToolTipText("");
-        jPanel3.add(jComboBox2);
-
-        jbtnCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/intsuperior/recursos/ic_menu_search.png"))); // NOI18N
-        jbtnCategoria.setBorderPainted(false);
-        jbtnCategoria.setOpaque(true);
-        jbtnCategoria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnCategoriaActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jbtnCategoria);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel1.add(jPanel3, gridBagConstraints);
-
-        jProgressBar1.setBorderPainted(false);
-        jProgressBar1.setString("");
-        jProgressBar1.setStringPainted(true);
+        jLabel4.setText("Direccion");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel1.add(jProgressBar1, gridBagConstraints);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel2.add(jLabel4, gridBagConstraints);
 
-        add(jPanel1);
+        jLabel5.setText("Telefono");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel2.add(jLabel5, gridBagConstraints);
+
+        jLabel6.setText("Cedula");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel2.add(jLabel6, gridBagConstraints);
+
+        jtxtNombre.setPreferredSize(new java.awt.Dimension(200, 28));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        jPanel2.add(jtxtNombre, gridBagConstraints);
+
+        jtxtApellido.setPreferredSize(new java.awt.Dimension(200, 28));
+        jtxtApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtApellidoActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
+        jPanel2.add(jtxtApellido, gridBagConstraints);
+
+        jtxtDireccion.setPreferredSize(new java.awt.Dimension(200, 28));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 8;
+        jPanel2.add(jtxtDireccion, gridBagConstraints);
+
+        jtxtTelefono.setPreferredSize(new java.awt.Dimension(200, 28));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 12;
+        jPanel2.add(jtxtTelefono, gridBagConstraints);
+
+        jtxtCedula.setPreferredSize(new java.awt.Dimension(200, 28));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 16;
+        jPanel2.add(jtxtCedula, gridBagConstraints);
+
+        jpbEstado.setBorderPainted(false);
+        jpbEstado.setString("");
+        jpbEstado.setStringPainted(true);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 22;
+        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel2.add(jpbEstado, gridBagConstraints);
+
+        jLabel7.setText("Correo");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jPanel2.add(jLabel7, gridBagConstraints);
+
+        jtxtCorreo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtCorreoActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel2.add(jtxtCorreo, gridBagConstraints);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridheight = 19;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel2.add(jScrollPane1, gridBagConstraints);
+
+        jLabel8.setText("Notas");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 0;
+        jPanel2.add(jLabel8, gridBagConstraints);
+
+        add(jPanel2);
 
         jToolBar1.setFloatable(false);
 
@@ -291,39 +277,45 @@ ControladorProducto controlador;
         add(jToolBar1);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jtxttipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxttipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxttipoActionPerformed
+
     private void jbtnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNuevoActionPerformed
         // TODO add your handling code here:
+     controlador.jbtnNuevo(evt, jtxtNombre, jtxtApellido, jtxtDireccion, jtxtTelefono, jtxtCedula, jtxtCorreo, jTextArea1, jpbEstado);
     }//GEN-LAST:event_jbtnNuevoActionPerformed
+
+    private void jtxtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtCorreoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtCorreoActionPerformed
+
+    private void jtxtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtApellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtApellidoActionPerformed
 
     private void jbtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarActionPerformed
         // TODO add your handling code here:
+        controlador.jbtnGuardar(evt, jtxtNombre, jtxtApellido, jtxtDireccion, jtxtTelefono, jtxtCedula, jtxtCorreo, jTextArea1, jpbEstado);
     }//GEN-LAST:event_jbtnGuardarActionPerformed
 
     private void jbtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEditarActionPerformed
         // TODO add your handling code here:
+        controlador.jbtnActualizar(evt, jtxtNombre, jtxtApellido, jtxtDireccion, jtxtTelefono, jtxtCedula, jtxtCorreo, jTextArea1, jpbEstado);
     }//GEN-LAST:event_jbtnEditarActionPerformed
 
     private void jbtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEliminarActionPerformed
         // TODO add your handling code here:
+        controlador.jbtnEliminar(evt, jtxtNombre, jtxtApellido, jtxtDireccion, jtxtTelefono, jtxtCedula, jtxtCorreo, jTextArea1, jpbEstado);
     }//GEN-LAST:event_jbtnEliminarActionPerformed
 
     private void jbtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnBuscarActionPerformed
         // TODO add your handling code here:
+        controlador.jbtnBuscar(evt, jtxtNombre, jtxtApellido, jtxtDireccion, jtxtTelefono, jtxtCedula, jtxtCorreo, jTextArea1, jpbEstado);
     }//GEN-LAST:event_jbtnBuscarActionPerformed
-
-    private void jbtnCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCategoriaActionPerformed
-        // TODO add your handling code here:
-        controlador.jbtnCategoria(evt);
-    }//GEN-LAST:event_jbtnCategoriaActionPerformed
-
-    private void jbtnIvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnIvaActionPerformed
-        controlador.jbtnIva(evt);
-    }//GEN-LAST:event_jbtnIvaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -334,21 +326,21 @@ ControladorProducto controlador;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton jbtnBuscar;
-    private javax.swing.JButton jbtnCategoria;
     private javax.swing.JButton jbtnEditar;
     private javax.swing.JButton jbtnEliminar;
     private javax.swing.JButton jbtnGuardar;
-    private javax.swing.JButton jbtnIva;
     private javax.swing.JButton jbtnNuevo;
-    private javax.swing.JTextField jtxtCodigo;
-    private javax.swing.JTextField jtxtDetalle;
-    private javax.swing.JTextField jtxtStock;
-    private javax.swing.JTextField jtxtiva;
-    private javax.swing.JTextField jtxtprecioCompras;
-    private javax.swing.JTextField jtxtprecioVenta;
+    public javax.swing.JProgressBar jpbEstado;
+    private javax.swing.JTextField jtxtApellido;
+    private javax.swing.JTextField jtxtCedula;
+    private javax.swing.JTextField jtxtCorreo;
+    private javax.swing.JTextField jtxtDireccion;
+    private javax.swing.JTextField jtxtNombre;
+    private javax.swing.JTextField jtxtTelefono;
+    public javax.swing.JTextField jtxttipo;
     // End of variables declaration//GEN-END:variables
 }

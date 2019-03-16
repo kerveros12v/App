@@ -9,13 +9,15 @@ package ec.edu.intsuperior.modelo;
  *
  * @author user
  */
-public class Clientes implements  DatosParametrosGeneral{
+public class Clientes {
 int idClientes;
     private String nombres;
     private String apellidos;
     private String direccion;
     private String telefono;
     private String correo;
+    private String notas;
+    private String cedula;
     public Clientes() {
     }
     public Clientes(int idClientes, String nombres, String apellidos, String direccion, String telefono, String correo) {
@@ -26,8 +28,20 @@ int idClientes;
         this.telefono = telefono;
         this.correo = correo;
     }
+ /**
+     * @return the notas
+     */
+    public String getNotas() {
+        return notas;
+    }
 
-   
+    /**
+     * @param notas the notas to set
+     */
+    public void setNotas(String notas) {
+        this.notas = notas;
+    }
+
     /**
      * @return the nombres
      */
@@ -99,27 +113,23 @@ int idClientes;
     }
 
     @Override
-    public String Imprimir() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-     @Override
-    public Boolean nuevo(String query) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String toString() {
+        return idClientes +" "+nombres+" "+apellidos+" "+direccion+" "+telefono+" "+correo;
     }
 
-    @Override
-    public Boolean editar(String query) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    /**
+     * @return the cedula
+     */
+    public String getCedula() {
+        return cedula;
     }
 
-    @Override
-    public Boolean eliminar(String query) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    /**
+     * @param cedula the cedula to set
+     */
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 
-    @Override
-    public Object buscar(String query) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }

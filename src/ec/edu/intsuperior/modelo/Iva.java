@@ -17,28 +17,55 @@
  * MA 02110-1301  USA
  */
 package ec.edu.intsuperior.modelo;
-import java.io.*;
+
 /**
  *
  * @author dellpc
  */
-public  class ConeccionBaseDatos implements Serializable {
-     public String driver = "com.mysql.jdbc.Driver";
+public class Iva {
+    private String detalle;
+    private double valor;
+    private int codigo;
 
-    // Nombre de la base de datos
-    public String database = "sfwb_1";
+    /**
+     * @return the detalle
+     */
+    public String getDetalle() {
+        return detalle;
+    }
 
-    // Host
-    public String hostname = "127.0.0.1";
+    /**
+     * @param detalle the detalle to set
+     */
+    public void setDetalle(String detalle) {
+        this.detalle = detalle;
+    }
 
-    // Puerto
-    public String port = "3306";
+    /**
+     * @return the valor
+     */
+    public double getValor() {
+        return valor;
+    }
 
-     // Nombre de usuario
-    public String username = "cliente";
-     // Clave de usuario
-    public String password = "Katekio12v.";
-     // Ruta de nuestra base de datos (desactivamos el uso de SSL con "?useSSL=false")
-   public String url = "jdbc:mysql://" + hostname + ":" + port + "/" + database + "?useSSL=false";
-   
+    /**
+     * @param valor the valor to set
+     */
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    /**
+     * @return the codigo
+     */
+    public int getCodigo() {
+        return codigo;
+    }
+
+    /**
+     * @param codigo the codigo to set
+     */
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
 }

@@ -9,7 +9,7 @@ package ec.edu.intsuperior.modelo;
  *
  * @author user
  */
-public class Usuarios implements DatosParametrosGeneral {
+public class Usuarios  {
 
     private int idUsuarios;
     private String usu_nombres, usu_apellidos, usu_usuario, usua_clave;
@@ -97,30 +97,7 @@ public class Usuarios implements DatosParametrosGeneral {
         this.usua_clave = usua_clave;
     }
 
-    @Override
-    public Boolean nuevo(String query) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Boolean editar(String query) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Boolean eliminar(String query) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object buscar(String query) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String Imprimir() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     /**
      * @return the permisos

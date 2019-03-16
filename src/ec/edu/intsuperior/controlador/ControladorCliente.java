@@ -22,6 +22,10 @@ import ec.edu.intsuperior.modelo.Clientes;
 import ec.edu.intsuperior.modelo.DatosParametrosGeneral;
 import ec.edu.intsuperior.vista.JPCliente;
 import ec.edu.intsuperior.vista.WCentral;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JProgressBar;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -63,12 +67,31 @@ public class ControladorCliente extends Controlador implements DatosParametrosGe
 
     @Override
     public String nuevo(String query) {
-        return con.EscrituraQuery(query);
+        cm.conectarMySQL();
+        String g = cm.LecturaQuery(query).toString();
+        cm.Cerrar();
+        return g;
     }
 
     @Override
     public void buscar(String query) {
+        try {
 
+            cm.conectarMySQL();
+            ResultSet g = cm.LecturaQuery(query);
+            while (g.next()) {
+                clientes.setApellidos(g.getString(2));
+                clientes.setCedula(g.getString(5));
+                clientes.setNotas(g.getString(6));
+                clientes.setDireccion(g.getString(3));
+                clientes.setNombres(g.getString(1));
+                clientes.setCorreo(g.getString(7));
+                clientes.setTelefono(g.getString(4));
+            }
+            cm.Cerrar();
+        } catch (SQLException ex) {
+            Logger.getLogger(ControladorProveedor.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -92,12 +115,18 @@ public class ControladorCliente extends Controlador implements DatosParametrosGe
 
     @Override
     public String editar(String query) {
-        return con.EscrituraQuery(query);
+        cm.conectarMySQL();
+        String g = cm.LecturaQuery(query).toString();
+        cm.Cerrar();
+        return g;
     }
 
     @Override
     public String eliminar(String query) {
-        return con.EscrituraQuery(query);
+        cm.conectarMySQL();
+        String g = cm.LecturaQuery(query).toString();
+        cm.Cerrar();
+        return g;
     }
 
     public void jbtnNuevo(java.awt.event.ActionEvent evt, JTextField nombre, JTextField apellido, JTextField direccion, JTextField telefono, JTextField cedula, JTextField correo, JTextArea notas, JProgressBar notificacion) {
@@ -126,34 +155,51 @@ public class ControladorCliente extends Controlador implements DatosParametrosGe
         clientes.setTelefono(telefono.getText());
         clientes.setNotas(notas.getText());
         clientes.setCedula(cedula.getText());
-        notificacion.setString(eliminar("call sfwb_1.nuevoProvedores('" + clientes.getApellidos() + "','" + clientes.getCedula()+ "','" + clientes.getCorreo() + "','" + 
-              clientes.getDireccion() + "','" + clientes.getNombres()+ "','" + 
-                clientes.getTelefono() + "','" + clientes.getNotas() + "');"));
+        notificacion.setString(eliminar("call sfwb_1.nuevoCliente('"
+                + clientes.getApellidos() + "','"
+                + clientes.getCedula() + "','"
+                + clientes.getDireccion() + "','"
+                + clientes.getNombres() + "','"
+                + clientes.getTelefono() + "','"
+                + clientes.getNotas() + "','"
+                + clientes.getCorreo() + "');"));
     }
-     public void jbtnActualizar(java.awt.event.ActionEvent evt, JTextField nombre, JTextField apellido, JTextField direccion, JTextField telefono, JTextField cedula, JTextField correo, JTextArea notas, JProgressBar notificacion) {
-        notificacion.setString(editar("call sfwb_1.ActualizarProveedor('" + apellido.getText()+ "','" +cedula.getText()+ "','" +correo.getText()+ "','" +direccion.getText()+ "','" + nombre.getText()+ "','" + telefono.getText()+ "','" + notas.getText()+ "','" + clientes.getNombres()+ "','" + 
-                clientes.getApellidos()+ "','" + clientes.getCedula()+ "');"));
+
+    public void jbtnActualizar(java.awt.event.ActionEvent evt, JTextField nombre, JTextField apellido, JTextField direccion, JTextField telefono, JTextField cedula, JTextField correo, JTextArea notas, JProgressBar notificacion) {
+        notificacion.setString(editar("call sfwb_1.ActualizarCliente('"
+                + apellido.getText() + "','"
+                + cedula.getText() + "','"
+                + correo.getText() + "','"
+                + direccion.getText() + "','"
+                + nombre.getText() + "','"
+                + telefono.getText() + "','"
+                + notas.getText() + "','"
+                + clientes.getNombres() + "','"
+                + clientes.getApellidos() + "','"
+                + clientes.getCedula() + "');"));
     }
-     public void jbtnEliminar(java.awt.event.ActionEvent evt, JTextField nombre, JTextField apellido, JTextField direccion, JTextField telefono, JTextField cedula, JTextField correo, JTextArea notas, JProgressBar notificacion) {
-         clientes.setNombres(nombre.getText());
+
+    public void jbtnEliminar(java.awt.event.ActionEvent evt, JTextField nombre, JTextField apellido, JTextField direccion, JTextField telefono, JTextField cedula, JTextField correo, JTextArea notas, JProgressBar notificacion) {
+        clientes.setNombres(nombre.getText());
         clientes.setApellidos(apellido.getText());
         clientes.setDireccion(direccion.getText());
         clientes.setCorreo(correo.getText());
         clientes.setTelefono(telefono.getText());
         clientes.setNotas(notas.getText());
         clientes.setCedula(cedula.getText());
-        notificacion.setString(eliminar("call sfwb_1.eliminarProveedores('" + clientes.getNombres() + "','" + clientes.getApellidos()+ "','" + clientes.getCedula() + "');"));
+        notificacion.setString(eliminar("call sfwb_1.eliminarCliente('" + clientes.getNombres() + "','" + clientes.getApellidos() + "','" + clientes.getCedula() + "');"));
 
     }
-       public void jbtnBuscar(java.awt.event.ActionEvent evt, JTextField nombre, JTextField apellido, JTextField direccion, JTextField telefono, JTextField cedula, JTextField correo, JTextArea notas, JProgressBar notificacion) {
-          clientes.setNombres(nombre.getText());
+
+    public void jbtnBuscar(java.awt.event.ActionEvent evt, JTextField nombre, JTextField apellido, JTextField direccion, JTextField telefono, JTextField cedula, JTextField correo, JTextArea notas, JProgressBar notificacion) {
+        clientes.setNombres(nombre.getText());
         clientes.setApellidos(apellido.getText());
         clientes.setDireccion(direccion.getText());
         clientes.setCorreo(correo.getText());
         clientes.setTelefono(telefono.getText());
         clientes.setNotas(notas.getText());
         clientes.setCedula(cedula.getText());
-        buscar("SELECT prov_nombres,prov_apellidos,prov_direccion,prov_telefono,prov_cedula,prov_correo,prov_notas FROM sfwb_1.proveedores where prov_cedula='" + clientes.getCedula() + "';");
+        buscar("SELECT `clientes`.`clienombres`,`clientes`.`clieapellidos`,`clientes`.`cliedireccion`,`clientes`.`clietelefono`,`clientes`.`cliecedula`,`clientes`.`clieNotas`,`clientes`.`clieCorreo`FROM `sfwb_1`.`clientes` where `clientes`.`cliecedula`='" + clientes.getCedula() + "';");
         nombre.setText(clientes.getNombres());
         apellido.setText(clientes.getApellidos());
         cedula.setText(clientes.getCedula());
@@ -161,7 +207,7 @@ public class ControladorCliente extends Controlador implements DatosParametrosGe
         telefono.setText(clientes.getTelefono());
         correo.setText(clientes.getCorreo());
         notas.setText(clientes.getNotas());
-        notificacion.setString("Buscabdo " + clientes.getCedula());
+        notificacion.setString("Buscando " + clientes.getCedula());
 
     }
 

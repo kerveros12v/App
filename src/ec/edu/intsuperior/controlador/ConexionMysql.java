@@ -52,7 +52,7 @@ public class ConexionMysql {
     }
 
     public String EscrituraQuery(String query) {
-
+        System.out.println(query);
         String salida = "";
         try {
             PreparedStatement pstm = conn.prepareStatement(query);

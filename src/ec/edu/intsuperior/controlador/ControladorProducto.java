@@ -21,20 +21,23 @@ package ec.edu.intsuperior.controlador;
 import ec.edu.intsuperior.modelo.Productos;
 import ec.edu.intsuperior.vista.JPProductos;
 import ec.edu.intsuperior.vista.WCentral;
-
+import javax.swing.JComboBox;
 /**
  *
  * @author dellpc
  */
 public class ControladorProducto extends Controlador{
     private Productos productos=new Productos();
+    private final ControladorCategorias categorias=new ControladorCategorias();
+    private WCentral central;
     /**
      * Metodo para la abertura de Vista Productos
      * @param central 
      */
     public void getProducto(WCentral central){
+        this.central=central;
         JPProductos wc=new JPProductos(this);
-        abrirInternalJFrame("Productos", central, wc,false,true,false,350, 250);
+        abrirInternalJFrame("Productos", this.central, wc,false,true,false,350, 250);
     }
     
     /**
@@ -50,4 +53,16 @@ public class ControladorProducto extends Controlador{
     public void setProductos(Productos productos) {
         this.productos = productos;
     }
+    public void jbtnCategoria(java.awt.event.ActionEvent evt) {                                              
+        categorias.showCategoria(central);
+    } 
+     public void jbtnIva(java.awt.event.ActionEvent evt) {                                        
+        
+    } 
+     public void recargarCategoria(JComboBox campo){
+         
+     }
+      public void recargarIva(JComboBox campo){
+         
+     }
 }

@@ -24,7 +24,8 @@ import javax.swing.JPanel;
 public class Controlador {
 
     public final ConexionMysql cm = new ConexionMysql();
-  
+    private WCentral wcentral;
+
     /**
      * Metodo para la abertura de Vista de el formulario principal para todos
      * los usuarios
@@ -32,14 +33,14 @@ public class Controlador {
      * @param seccion
      */
     public void getSistema(ArrayList<String> seccion) {
-        WCentral wcentral = new WCentral(this);
-        VistaEnableGenera(wcentral, false);
+        setWcentral(new WCentral(this));
+        VistaEnableGenera(getWcentral(), false);
         //VistaGenera(wcentral, false);
         for (int i = 0; i < seccion.size(); i++) {
-            vistasEnable(wcentral, seccion.get(i).split("-"));
+            vistasEnable(getWcentral(), seccion.get(i).split("-"));
             //vistasVisible(wcentral, seccion.get(i).split("-"));
         }
-        abrirJFrame(wcentral, true, true);
+        abrirJFrame(getWcentral(), true, true);
 
     }
 
@@ -48,8 +49,8 @@ public class Controlador {
      * ingreso posterior
      */
     public void showLogin() {
-       ControladorUsuarios cu=new ControladorUsuarios();
-       cu.getLogin();
+        ControladorUsuarios cu = new ControladorUsuarios();
+        cu.getLogin();
 
     }
 
@@ -62,8 +63,6 @@ public class Controlador {
         abrirJFrame(acercade, false, false);
 
     }
-
-   
 
     /**
      * Metodo para la abertura de Vista de la configuracion previa a su uso
@@ -99,12 +98,13 @@ public class Controlador {
         return "";
     }
 
-    void abrirInternalJFrame(String title, WCentral central, JPanel inter, Boolean cambiarTamanio, Boolean maximizar, Boolean salida, int ancho, int alto) {
+    JInternalFrame abrirInternalJFrame(String title, WCentral central, JPanel inter, Boolean cambiarTamanio, Boolean maximizar, Boolean salida, int ancho, int alto) {
         JInternalFrame wc = new JInternalFrame(title, cambiarTamanio, maximizar, salida, true);
         wc.setSize(ancho, alto);
         wc.add(inter);
         central.addJFrame(wc);
         wc.setVisible(true);
+        return wc;
     }
 
     public void abrirJFrame(JFrame wc, Boolean maximizar, Boolean salida) {
@@ -131,11 +131,6 @@ public class Controlador {
         wc.setSize(ancho, alto);
         wc.setVisible(true);
     }
-
-   
-    
-
-    
 
     public void VistaGenera(WCentral wc, Boolean a) {
         //Seccion de mantenimiento
@@ -495,5 +490,19 @@ public class Controlador {
 
             }
         }
+    }
+
+    /**
+     * @return the wcentral
+     */
+    public WCentral getWcentral() {
+        return wcentral;
+    }
+
+    /**
+     * @param wcentral the wcentral to set
+     */
+    public void setWcentral(WCentral wcentral) {
+        this.wcentral = wcentral;
     }
 }
